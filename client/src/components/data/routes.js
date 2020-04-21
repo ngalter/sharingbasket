@@ -5,12 +5,12 @@ const data = [
       index: true,
   },
   {
-    path: '/users',
+    path: '/',
     label: 'Home',
   },
     {
-      path: '/signup',
-      label: 'Sign Up',
+      path: '/secret',
+      label: 'Secret',
     },
     {
       path: '/pantry',
