@@ -11,6 +11,10 @@ const data = [
     {
       path: '/secret',
       label: 'Secret',
+  },
+  {
+     path: '/pantries',
+      label: 'Pantries',
     },
     {
       path: '/pantry',

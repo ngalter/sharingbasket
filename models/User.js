@@ -7,9 +7,19 @@ const userSchema = new Schema({
   name: { type: String, required: true },
   password: { type: String, required: true },
   email: { type: String, required: true },
-  date: { type: Date, default: Date.now }
-});
+  date: { type: Date, default: Date.now },
+  donation:
+  [
+        {
+            ein: { type: Number, required: true },
+            charityName: { type: String, required: true },
+            desctiption: { type: String},
+            date: { type: Date, default: Date.now }
+          }
 
+  ]
+});
+// },{ autoCreate: true, capped: 1024 });
 userSchema.pre('save', function(next) {
   var user = this;
 

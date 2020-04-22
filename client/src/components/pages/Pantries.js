@@ -5,30 +5,30 @@ import { Link } from "react-router-dom";
 import { List, ListItem } from "../List";
 import { Input, FormBtn } from "../Form";
 
-function Users() {
+function Pantries() {
   // Setting our component's initial state
-  const [users, setUsers] = useState([])
+  const [pantries, setPantries] = useState([])
   const [formObject, setFormObject] = useState({})
 
   // Load all books and store them with setBooks
   useEffect(() => {
-    loadUsers()
+    loadPantries()
   }, [])
 
   // Loads all books and sets them to books
-  function loadUsers() {
-    API.getUsers()
+  function loadPantries() {
+    API.getPantries()
       .then(res => 
-        setUsers(res.data)
+        setPantries(res.data)
       )
       .catch(err => console.log(err));
   };
 
   // Deletes a book from the database with a given id, then reloads books from the db
 
-  function deleteUser(id) {
-    API.deleteUser(id)
-      .then(res => loadUsers())
+  function deletePantry(id) {
+    API.deletePantry(id)
+      .then(res => loadPantries())
       .catch(err => console.log(err));
   }
 
@@ -43,18 +43,18 @@ function Users() {
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.name && formObject.email) {
-      API.saveUser({
+      API.savePantry({
         name: formObject.name,
         email: formObject.email,
         password: formObject.password
       })
-        .then(res => loadUsers())
+        .then(res => loadPantries())
         .catch(err => console.log(err));
     }
   };
 
     return (<div>
-              <h1>Users?</h1>
+              <h1>Pantries?</h1>
             <form>
               <Input
                 onChange={handleInputChange}
@@ -75,20 +75,20 @@ function Users() {
                 disabled={!(formObject.name && formObject.email )}
                 onClick={handleFormSubmit}
               >
-                Submit User
+                Submit Pantry
               </FormBtn>
             </form>
-              <h1>users</h1><div>
-            {users.length ? (
+              <h1>pantries</h1><div>
+            {pantries.length ? (
               <List>
-                {users.map(user => (
-                  <ListItem key={user._id}>
-                    <Link to={"/users/" + user._id}>
+                {pantries.map(item=> (
+                  <ListItem key={item._id}>
+                    <Link to={"/pantries/" + item._id}>
                       <strong>
-                        {user.name} at: {user.email}
+                        {item.name} at: {item.email}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => deleteUser(user._id)} />
+                    <DeleteBtn onClick={() => deletePantry(item._id)} />
                   </ListItem>
                 ))}
               </List>
@@ -99,4 +99,5 @@ function Users() {
   }
 
 
-export default Users;
+export default Pantries;
+

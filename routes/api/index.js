@@ -1,15 +1,9 @@
 const router = require("express").Router();
 const userRoutes = require("./users");
+const pantryRoutes = require("./pantries");
 
 // Book routes
 router.use("/users", userRoutes);
-
-// Auth
-router.get('/api/home', function(req, res) {
-    res.send('Welcome!');
-  });
-router.get('/api/secret', function(req, res) {
-    res.send('The password is potato');
-  });
+router.use("/pantries", pantryRoutes);
 
 module.exports = router;
