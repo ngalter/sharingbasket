@@ -1,14 +1,50 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+module.exports = function(sequelize, DataTypes) {
+  var Pantry = sequelize.define("Pantry", {
+      ein: {
+          type: DataTypes.STRING,
+          allowNull: false
+      },
+      charityName: {
+          type: DataTypes.STRING,
+          allowNull: false
 
-const pantrySchema = new Schema({
-  name: { type: String, required: true },
-  email: { type: String, required: true },
-  password: { type: String, required: true },
-  date: { type: Date, default: Date.now },
-});
-// },{ autoCreate: true, capped: 1024 });
+      },
+      address1: {
+          type: DataTypes.STRING,
+          allowNull: true
+ 
+      },
+      city: {
+          type: DataTypes.STRING,
+          allowNull: true
+ 
+      },
+      state: {
+          type: DataTypes.STRING,
+          allowNull: true
+   
+      },
+      zip: {
+          type: DataTypes.STRING,
+          allowNull: true
 
-const Pantry = mongoose.model("Pantry", pantrySchema);
+      },
+      wishlist: {
+          type: DataTypes.STRING,
+          allowNull: true
 
-module.exports = Pantry;
+      }
+  });
+
+  Pantry.associate = function(models) {
+    // We're saying that a Recipe should belong to an Usdr
+    // A Recipe can't be created without an User due to the foreign key constraint
+    Pantry.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
+  return Pantry;
+};

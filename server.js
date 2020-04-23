@@ -1,23 +1,43 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const routes = require("./routes");
-const app = express();
-const PORT = process.env.PORT || 3001;
+// Requiring necessary npm packages
+var express = require("express");
+var session = require("express-session");
+require('dotenv').config();
+// Requiring passport as we've configured it
+var passport = require("./config/passport");
 
-// Define middleware here
+// Setting up port and requiring models for syncing
+var PORT = process.env.PORT || 3001;
+var db = require("./models");
+
+// Creating express app and configuring middleware needed for authentication
+var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-// Add routes, both API and view
-app.use(routes);
+app.use(express.static("public"));
 
-// Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sharingbasket");
+// We need to use sessions to keep track of our user's login status
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
-// Start the API server
+// Requiring our routes
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
+
+// Syncing our database and logging a message to the user upon success
+db.sequelize.sync({ force: true }).then(function() {
+ // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+});
+
+// app.listen(PORT, function() {
+//   console.log(
+//     "==> 🌎  Listening on port %s. Visit http://l ocalhost:%s/ in your browser.",
+//     PORT,
+//     PORT
+//   );
+// });

@@ -1,27 +1,24 @@
-import React from "react";
-// import { Router, Switch } from 'react-router-dom';
-import { BrowserRouter as Router, Route} from "react-router-dom";
-import Users from "./components/pages/UserList";
-import Detail from "./components/pages/Detail";
-// import NoMatch from "./components/pages/NoMatch";
-import Navbar from "./components/Navbar";
-// import Login from "./components/pages/Login";
-import Home from "./components/pages/Home"
-import Secret from "./components/pages/Secret"
-import Pantries from "./components/pages/Pantries"
-import PantryList from "./components/pages/PantryList";
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-  return (<div>
-    <Router>
-      <Navbar />
-        <Route path="/secret" component={Secret} />
-        <Route path="/" exact component={Home} />
-        <Route exact path="/Community" component={Users} />
-      <Route exact path="/pantry" component={PantryList} />
-      <Route exact path="/pantries" component={Pantries} />
-        <Route exact path="/users/:id" component={Detail} />
-  </Router>
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
