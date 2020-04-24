@@ -1,0 +1,9 @@
+.header {
+    padding-top:110px;
+    background: url("../../assets/Header_Image1.jpg");
+    width: 100% !important;
+}
+
+h1 {
+    font-size: 45px;
+}

@@ -1,0 +1,21 @@
+.aboutMeButtons {
+  margin-top: 15px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.page-section-about {
+  padding: 8rem 0;
+}
+
+.sharingBasketLogo {
+  margin-left:2%;
+  float:left; 
+  height:220px;
+  padding-right: 20px;
+} 
+
+.text-muted {
+  margin-left:60px;
+  margin:0px;
+}
