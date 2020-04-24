@@ -102,7 +102,7 @@
   header.masthead {
     padding-top: 120px;
     padding-bottom: calc(10rem - 4.5rem);
-    background: url("../../client/src/assets/bg-masthead copy.jpg");
+    background: url("../src/assets/bg-masthead\ copy.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
