@@ -1,0 +1,43 @@
+    header.masthead h1 {
+    font-size: 2.25rem;
+  }
+  @media (min-width: 992px) {
+    header.masthead {
+      height: 100vh;
+      min-height: 40rem;
+      padding-top: 4.5rem;
+      padding-bottom: 0;
+    }
+    header.masthead p {
+      font-size: 1.15rem;
+    }
+    header.masthead h1 {
+      font-size: 3rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    header.masthead h1 {
+      font-size: 3.5rem;
+    }
+  }
+  
+  #loginBtn:focus, .btn:active {
+    box-shadow: none; /* Removes blue halo */
+  }
+  
+  #loginBtn {
+    background-color: #28a745;
+    cursor: pointer;/* Pointer/hand icon */
+    outline: none;
+    color:white;
+    border-width: 2px;
+  }
+  
+  .tagLine {
+    color:white;
+    margin: 30px;
+  }
+
+  .logoJumbotron {
+    height: 350px;
+  }
