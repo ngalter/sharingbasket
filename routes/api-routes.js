@@ -118,26 +118,3 @@ module.exports = function (app) {
   });
 };
 
-// router.get('/test-env', (req,res) => {
-//   res.json({ success: true, secretKey: process.env.MY_SECRET_KEY });
-// });
-  // app.get("/api/search/:term", function(req, res) {
-  //   let searchTerm = req.params.term;
-  //   let apiKey = process.env.SPOON_APIKEY;
-  //   let queryUrl = `https://api.spoonacular.com/s/search?query=${searchTerm}&apiKey=${apiKey}`;
-    
-  //   axios.get(queryUrl).then((results) => {
-  //     // console.log(results.data.results);
-  //     res.render("search-results", { s: results.data.results });
-  //   });
-  // });
-  
-  // app.get("/api/suggestedSearch/:search", function(req, res) {
-  //   let searchTerm = req.params.search;
-  //   let apiKey = process.env.SPOON_APIKEY;
-  //   let queryUrl = `https://api.spoonacular.com/s/search?query=${searchTerm}&apiKey=${apiKey}`;
-
-  //   axios.get(queryUrl).then((results) => {
-  //     res.render("search-results", { s: results.data.results });
-  //   });
-  // });
