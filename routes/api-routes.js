@@ -99,22 +99,22 @@ module.exports = function (app) {
   });
 
 
-  //search for Pantries: getPantries(inState, inCity) {}
-  app.post("/api/search/:search", function (req, res) {
-    let inState = req.params.inState;
-    let inCity = req.params.inCity;
-    const APP_KEY = process.env.REACT_APP_APP_KEY;
-    const APP_ID = process.env.REACT_APP_APP_ID;
-    const BASEURL = "https://api.data.charitynavigator.org/v2/Organizations?";
-    const category = "food+pantry";
-    const resultCount = 2;
-    let url = `${BASEURL}app_id=${APP_ID}&app_key=${APP_KEY}&pageSize=${resultCount}&search=${category}&state=${inState}&city=${inCity}`
-    axios.get(url).then(response => {
-      res.json(response.data);
-      console.log(res.json(response.data));
-      console.log("api-route:", response.data);
-    })
-      .catch(error => console.log(error))
-  });
-};
+//   //search for Pantries: getPantries(inState, inCity) {}
+//   app.post("/api/search/:search", function (req, res) {
+//     let inState = req.params.inState;
+//     let inCity = req.params.inCity;
+//     const APP_KEY = process.env.REACT_APP_APP_KEY;
+//     const APP_ID = process.env.REACT_APP_APP_ID;
+//     const BASEURL = "https://api.data.charitynavigator.org/v2/Organizations?";
+//     const category = "food+pantry";
+//     const resultCount = 2;
+//     let url = `${BASEURL}app_id=${APP_ID}&app_key=${APP_KEY}&pageSize=${resultCount}&search=${category}&state=${inState}&city=${inCity}`
+//     axios.get(url).then(response => {
+//       res.json(response.data);
+//       console.log(res.json(response.data));
+//       console.log("api-route:", response.data);
+//     })
+//       .catch(error => console.log(error))
+//   });
+// };
 
