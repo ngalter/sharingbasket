@@ -7,12 +7,6 @@ import HomePage from "./components/pages/HomePage/Home";
 
 import "./appStyles.css"
 
-// class App extends Component {
-//   static propTypes = {
-//     children: PropTypes.node
-//   }
-// }
-
 function App() {
   return (
     <Router>
