@@ -93,7 +93,7 @@ module.exports = function (app) {
       console.log(dbPantrys);
     });
   });
-
+};
   // app.get("/api/favorites", function (req, res) {
   //   console.log(req);
   //   res.json("pantrys", { pantrys: dbPantrys });
