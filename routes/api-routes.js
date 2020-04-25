@@ -1,5 +1,6 @@
 /* eslint-disable */
 var db = require("../models");
+var Sequelize = require("sequelize");
 var passport = require("../config/passport");
 const axios = require("axios");
 
@@ -93,10 +94,10 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/api/favorites", function (req, res) {
-    console.log(req);
-    res.json("pantrys", { pantrys: dbPantrys });
-  });
+  // app.get("/api/favorites", function (req, res) {
+  //   console.log(req);
+  //   res.json("pantrys", { pantrys: dbPantrys });
+  // });
 
 
 //   //search for Pantries: getPantries(inState, inCity) {}
