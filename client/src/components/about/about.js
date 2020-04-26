@@ -1,6 +1,7 @@
 import React from "react";
 import "./about_styles.css"
-// About Me 
+
+// About
 
 function About() {
     return (

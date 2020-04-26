@@ -29,7 +29,7 @@ class LoginForm extends React.Component {
               Submit
             </button>
           </form>
-          <p class="text-muted orLogin"style={{ display: "flex", justifyContent: "center" }}>Or sign up&nbsp;<Link to="/sign-up">Here</Link></p>
+          <p className="text-muted orLogin"style={{ display: "flex", justifyContent: "center" }}>or go back&nbsp;<Link to="/">Home</Link></p>
         </div>
       );
   }

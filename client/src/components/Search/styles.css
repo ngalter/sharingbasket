@@ -1,0 +1,69 @@
+.d-flex {
+    justify-content: center;
+    padding: 20px;
+}
+
+.display-message {
+    color:#A9A9A9;
+}
+
+.text-center {
+    padding-bottom: 32px;
+}
+
+.form-control {
+    box-shadow: none !important; /* Removes blue halo */
+}
+
+.FormBtn {
+    box-shadow: none !important; /* Removes blue halo */
+}
+
+form {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2em;
+}
+
+@media (min-width: 600px) {
+    form {
+        width: 60%;
+        max-width: 500px;
+        padding: 20px;
+    }
+}
+
+form .form-group {
+    margin: 0;
+    width: 100%;
+}
+
+form .form-group input {
+    width: 100%;
+}
+
+form .formBtn {
+    background-color:#73B81B;
+    border-color: #73B81B;
+}
+
+form .formBtn i {
+    margin: 0 1em;
+    background-color: #73B81B;
+}
+
+.btn-success {
+    background-color: #73B81B;
+    border-color: #73B81B;
+    color: #454545;
+}
+
+.btn-success:hover {
+    background-color:#73B81B;
+    border-color: #73B81B;
+    color: white;
+}
+
+.form-control {
+    box-shadow: none; /* Removes blue halo */
+}

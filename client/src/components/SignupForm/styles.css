@@ -1,3 +1,7 @@
 .orLogin {
     padding-top: 30px !important;
 }
+
+input {
+    box-shadow: none !important; /* Removes blue halo */
+}
