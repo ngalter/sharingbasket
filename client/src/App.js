@@ -6,6 +6,7 @@ import SignUpPage from "./components/pages/SignUpPage/signUpPage"
 import CustomerPage from "./components/pages/CustomerPage/customerpage"
 import WishlistPage from "./components/pages/wishListPage/wishListPage";
 import StorePage from "./components/pages/StorePage/storePage";
+import SearchBar from "./components/Search/search";
 import AccessibilityPage from "./components/pages/Accessibilty /accessibilityPage";
 import HomePage from "./components/pages/HomePage/Home";
 
@@ -42,6 +43,9 @@ function App() {
         </Route>
         <Route exact path={["/", "/store"]}>
           <StorePage />
+          </Route>
+        <Route exact path={["/", "/searchbar"]}>
+          <SearchBar />
         </Route>
       </Switch>
     </div>
