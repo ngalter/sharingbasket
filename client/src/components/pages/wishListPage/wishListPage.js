@@ -4,13 +4,14 @@ import Jumbotron3 from "../../jumbotron3/jumbotron";
 
 import "./styles.css"
 
-function CustomerPage() {
+function AccessPage() {
     return (
       <div>
       <NavBar2 />
       <Jumbotron3/>
+      <h2 className="text-center mt-0 titleText">List of Items from Food Pantries</h2>
       </div>
       );
   };
 
-export default CustomerPage;
+export default AccessPage;

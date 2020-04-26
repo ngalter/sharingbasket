@@ -23,12 +23,13 @@ class LoginForm extends React.Component {
               name="password"
               placeholder="Password"
             />
-
+        
             <button className="btn btn-lg btn-primary btn-block" type="submit">
               Login
             </button>
+            <p className="text-muted orLogin"style={{ display: "flex", justifyContent: "center" }}>Sign up&nbsp;<Link to="/sign-up">Here</Link></p>
           </form>
-          <p class="text-muted orLogin"style={{ display: "flex", justifyContent: "center" }}>or go back&nbsp;<Link to="/">Home</Link></p>
+          <p className="text-muted orLogin"style={{ display: "flex", justifyContent: "center" }}>or go back&nbsp;<Link to="/">Home</Link></p>
         </div>
       );
   }

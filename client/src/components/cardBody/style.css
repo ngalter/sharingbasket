@@ -1,0 +1,45 @@
+.title-author {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 2em;
+  }
+  
+  .title {
+    margin-top: .5em;
+  }
+  
+  .authors {
+    margin: 0;
+  }
+  
+  .image {
+    margin-bottom: 2em;
+  }
+  
+  @media (min-width: 400px) {
+    .image-description {
+      display: flex;
+    }
+  }
+  
+  @media (min-width: 400px) {
+    .image-description .image {
+      width: 40%;
+      margin: 0 2em 0 0;
+    }
+  }
+  
+  @media (min-width: 400px) {
+    .image-description .description {
+      width: 100%;
+    }
+  }
+
+  .description {
+    font-size: 14px;
+    width: 60%;
+  }
+
+  .card-img {
+    width: 85%;
+  }

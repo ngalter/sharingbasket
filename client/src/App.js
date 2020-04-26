@@ -1,8 +1,12 @@
-import React, { Component } from 'react'
+import React from "react";
 import { BrowserRouter as Router, Route, Switch, } from "react-router-dom";
 import LoginPageClient from "./components/pages/LoginPageClient/Login"
 import LoginPantryPage from "./components/pages/LoginPagePantry/LoginPantry"
 import SignUpPage from "./components/pages/SignUpPage/signUpPage"
+import CustomerPage from "./components/pages/CustomerPage/customerpage"
+import WishlistPage from "./components/pages/wishListPage/wishListPage";
+import StorePage from "./components/pages/StorePage/storePage";
+import AccessibilityPage from "./components/pages/Accessibilty /accessibilityPage";
 import HomePage from "./components/pages/HomePage/Home";
 
 import "./appStyles.css"
@@ -15,7 +19,7 @@ function App() {
         <Route exact path={["/", "/home"]}>
           <HomePage />
         </Route>
-        <Route exact path={["/", "/login-client"]}>
+        <Route exact path={["/login-client"]}>
           <LoginPageClient />
         </Route>
         <Route exact path={["/", "/login-pantry"]}>
@@ -23,6 +27,21 @@ function App() {
         </Route>
         <Route exact path={["/", "/sign-up"]}>
           <SignUpPage />
+        </Route>
+        <Route exact path={["/", "/customer"]}>
+          <CustomerPage />
+        </Route>
+        <Route exact path={["/", "/pantry"]}>
+          <SignUpPage />
+        </Route>
+        <Route exact path={["/", "/wishlist"]}>
+          <WishlistPage />
+        </Route>
+        <Route exact path={["/", "/accessibility"]}>
+          <AccessibilityPage />
+        </Route>
+        <Route exact path={["/", "/store"]}>
+          <StorePage />
         </Route>
       </Switch>
     </div>

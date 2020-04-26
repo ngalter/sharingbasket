@@ -3,8 +3,6 @@
   }
   @media (min-width: 992px) {
     header.masthead {
-      height: 800px;
-      min-height: 40rem;
       padding-top: 4.5rem;
       padding-bottom: 0;
     }
@@ -25,28 +23,8 @@
     box-shadow: none; /* Removes blue halo */
   }
   
-  #loginBtn {
-    background-color: #28a745;
-    cursor: pointer;/* Pointer/hand icon */
-    outline: none;
-    color:white;
-    border-width: 2px;
-    max-width: 50%;
-    height: auto;
-  }
   
   .tagLine {
     color:white;
     margin: 30px;
-  }
-
-  .logoJumbotron {
-    max-width: 50%;
-    height: auto;
-  }
-
-  .container-jumbotron {
-    max-width: 80%;
-    height: auto;
-    margin: 0 auto;
   }
