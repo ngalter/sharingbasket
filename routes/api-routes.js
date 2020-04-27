@@ -54,7 +54,7 @@ module.exports = function (app) {
       });
     }
   });
-//---PANTRYS----
+  //---PANTRYS----
   app.get("/api/users/:UserId/pantrys", function (req, res) {
     db.Pantry.findAll({
       raw: true,
@@ -92,43 +92,44 @@ module.exports = function (app) {
       console.log(dbPantrys);
     });
   });
+
+
+  //---DONATES----
+  app.get("/api/users/:UserId/donates", function (req, res) {
+    db.Pantry.findAll({
+      raw: true,
+      where: {
+        UserId: req.params.UserId
+      }
+    }).then(function (dbPantrys) {
+      console.log(dbPantrys);
+    });
+  });
+
+  app.delete("/api/donates/:id", function (req, res) {
+    db.Pantry.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbPantrys) {
+      console.log(dbPantrys);
+    });
+  });
+
+  app.post("/api/donates", function (req, res) {
+    db.Pantry.create({
+      ein: req.body.ein,
+      charityName: req.body.charityName,
+      address1: req.body.address1,
+      address1: req.body.address1,
+      city: req.body.city,
+      state: req.body.state,
+      zip: req.body.zip,
+      wishlist: req.body.wishlist,
+      UserId: req.body.UserId
+    }).then(function (dbPantrys) {
+      console.log(dbPantrys);
+    });
+  });
+
 };
-
-//---DONATES----
-app.get("/api/users/:UserId/donates", function (req, res) {
-  db.Pantry.findAll({
-    raw: true,
-    where: {
-      UserId: req.params.UserId
-    }
-  }).then(function (dbPantrys) {
-    console.log(dbPantrys);
-  });
-});
-
-app.delete("/api/donates/:id", function (req, res) {
-  db.Pantry.destroy({
-    where: {
-      id: req.params.id
-    }
-  }).then(function (dbPantrys) {
-    console.log(dbPantrys);
-  });
-});
-
-app.post("/api/donates", function (req, res) {
-  db.Pantry.create({
-    ein: req.body.ein,
-    charityName: req.body.charityName,
-    address1: req.body.address1,
-    address1: req.body.address1,
-    city: req.body.city,
-    state: req.body.state,
-    zip: req.body.zip,
-    wishlist: req.body.wishlist,
-    UserId: req.body.UserId
-  }).then(function (dbPantrys) {
-    console.log(dbPantrys);
-  });
-});
-
