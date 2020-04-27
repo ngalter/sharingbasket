@@ -1,4 +1,3 @@
-import { Col, Row, Container } from "../../components/Grid/";
 import { Input, FormBtn } from "../../components/Form";
 import React, { useState, useEffect } from "react";
 import NavBar2 from "../nav2/nav";

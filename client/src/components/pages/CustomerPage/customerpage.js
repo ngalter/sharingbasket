@@ -1,9 +1,6 @@
-import { Col, Row, Container } from "../../Grid/";
 import React, { useState, useEffect } from "react";
-//import Search from "../../Search/search";
 import API from "../../../utils/API-external";
 import { Input, FormBtn } from "../../Form/"
-//import data from "../../components/data/wishlist";
 import NavBar2 from "../../nav2/nav";
 import Jumbotron3 from "../../jumbotron3/jumbotron";
 
