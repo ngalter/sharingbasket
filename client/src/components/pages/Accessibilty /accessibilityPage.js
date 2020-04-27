@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar2 from "../../nav2/nav";
-import SearchBar from "../../SearchBar/searchBar";
+import SearchBar from "../../../components/Search/search";
 import Jumbotron3 from "../../jumbotron3/jumbotron";
 
 import "./styles.css"
