@@ -19,9 +19,13 @@ app.use(express.json());
 // Requiring our routes
 require("./routes/api-routes.js")(app);
 
+
+  app.use(express.static(path.join(__dirname, 'client/build')));
+// Handle React routing, return all requests to React app
   app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
   });
+
 
 // We need to use sessions to keep track of our user's login status
 app.use(
