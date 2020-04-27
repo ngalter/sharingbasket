@@ -1,17 +1,16 @@
 import { Col, Row, Container } from "../../Grid/";
 import React, { useState, useEffect } from "react";
-import SearchBar from "../../Search/search";
+//import Search from "../../Search/search";
 import API from "../../../utils/API-external";
-import { Input, FormBtn } from "../../Form/";
-
+import { Input, FormBtn } from "../../Form/"
+//import data from "../../components/data/wishlist";
+import NavBar2 from "../../nav2/nav";
+import Jumbotron3 from "../../jumbotron3/jumbotron";
 
 import "./styles.css"
 
-
-
 const CustomerPage = () => {
-
-  const [pantries, setPantries] = useState([]);
+const [pantries, setPantries] = useState([]);
   const [formObject, setFormObject] = useState({});
 
   // Load all pantries and store them with setPantries
@@ -46,7 +45,11 @@ const CustomerPage = () => {
   };
   return (
     <div>
+    <div>
+    <NavBar2 />
+      <Jumbotron3/>
          <div className="Container-fluid" style={{ textAlign: "center" }}>
+         <h2 className="text-center mt-0 titleText">Search for the nearest Food Pantry</h2>
           <Input
             onChange={handleInputChange}
             name="city"
@@ -68,8 +71,8 @@ const CustomerPage = () => {
             </div>
         <div>
           {pantries.length ? (
-               <table class="table-responsive">
-               <table class="table table-hover" >
+               <table className="table-responsive">
+               <table className="table table-hover" >
                 <thead>
                   <tr>
                   <th scope="col">Pantry Name</th>
@@ -93,8 +96,8 @@ const CustomerPage = () => {
               <div className="noResults" style={{ textAlign: "center" }}>No Results to Display</div>
             )}
         </div>
+        </div>      
         </div>
     );
   };
-
 export default CustomerPage;
