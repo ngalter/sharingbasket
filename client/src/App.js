@@ -4,10 +4,9 @@ import LoginPageClient from "./components/pages/LoginPageClient/Login"
 import LoginPantryPage from "./components/pages/LoginPagePantry/LoginPantry"
 import SignUpPage from "./components/pages/SignUpPage/signUpPage"
 import CustomerPage from "./components/pages/CustomerPage/customerpage"
-import WishlistPage from "./components/pages/wishListPage/wishListPage";
+import WishListPage from "./components/pages/WishListPage/wishList";
 import StorePage from "./components/pages/StorePage/storePage";
 import SearchBar from "./components/Search/search";
-import WishList from "./components/WishList/wishList";
 import AccessibilityPage from "./components/pages/Accessibilty /accessibilityPage";
 import HomePage from "./components/pages/HomePage/Home";
 
@@ -46,7 +45,7 @@ function App() {
           <SearchBar />
           </Route>
           <Route exact path={["/", "/wishlist"]}>
-          <WishList />
+          <WishListPage />
         </Route>
       </Switch>
     </div>
