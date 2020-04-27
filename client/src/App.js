@@ -16,7 +16,7 @@ function App() {
     <Router>
     <div>
       <Switch>
-        <Route exact path={["/", "/home"]}>
+        <Route exact path={"/"}>
           <HomePage />
         </Route>
         <Route exact path={["/login-client"]}>
