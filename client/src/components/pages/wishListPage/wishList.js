@@ -1,16 +1,23 @@
 import React from "react";
-import data from "../../components/data/wishlist";
+import data from "../../data/wishlist";
+import NavBar2 from "../../nav2/nav";
+import Jumbotron3 from "../../jumbotron3/jumbotron";
 
-const WishList = () => {
+import "./styles.css"
 
-  return (<div>
+const WishListPage = () => {
+
+  return (
+  <div>
     <div>
-        <h1>Wish List</h1>
+    <NavBar2 />
+      <Jumbotron3/>
+        <h2 className="text-center mt-0 titleText">List of Items from Food Pantries</h2>
         </div>
           {data.length ? (
             <div>
-              <th aria-label="data table"></th>
-              <table>
+                <table class="table-responsive">
+               <table class="table table-hover" >
                 <tr>
                   <th align="left">Pantry Name</th>
                   <th align="left">Wish Item</th>
@@ -22,6 +29,7 @@ const WishList = () => {
                   </tr>
                 ))}
               </table>
+               </table>
             </div>
           ) : (
               <h3>No Results to Display</h3>
@@ -30,5 +38,4 @@ const WishList = () => {
     );
   };
 
-export default WishList;
-
+export default WishListPage;
