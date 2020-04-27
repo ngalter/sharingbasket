@@ -54,7 +54,7 @@ module.exports = function (app) {
       });
     }
   });
-
+//---PANTRYS----
   app.get("/api/users/:UserId/pantrys", function (req, res) {
     db.Pantry.findAll({
       raw: true,
@@ -66,6 +66,7 @@ module.exports = function (app) {
     });
   });
 
+  
   app.delete("/api/pantrys/:id", function (req, res) {
     db.Pantry.destroy({
       where: {
@@ -92,28 +93,42 @@ module.exports = function (app) {
     });
   });
 };
-  // app.get("/api/favorites", function (req, res) {
-  //   console.log(req);
-  //   res.json("pantrys", { pantrys: dbPantrys });
-  // });
 
+//---DONATES----
+app.get("/api/users/:UserId/donates", function (req, res) {
+  db.Pantry.findAll({
+    raw: true,
+    where: {
+      UserId: req.params.UserId
+    }
+  }).then(function (dbPantrys) {
+    console.log(dbPantrys);
+  });
+});
 
-//   //search for Pantries: getPantries(inState, inCity) {}
-//   app.post("/api/search/:search", function (req, res) {
-//     let inState = req.params.inState;
-//     let inCity = req.params.inCity;
-//     const APP_KEY = process.env.REACT_APP_APP_KEY;
-//     const APP_ID = process.env.REACT_APP_APP_ID;
-//     const BASEURL = "https://api.data.charitynavigator.org/v2/Organizations?";
-//     const category = "food+pantry";
-//     const resultCount = 2;
-//     let url = `${BASEURL}app_id=${APP_ID}&app_key=${APP_KEY}&pageSize=${resultCount}&search=${category}&state=${inState}&city=${inCity}`
-//     axios.get(url).then(response => {
-//       res.json(response.data);
-//       console.log(res.json(response.data));
-//       console.log("api-route:", response.data);
-//     })
-//       .catch(error => console.log(error))
-//   });
-// };
+app.delete("/api/donates/:id", function (req, res) {
+  db.Pantry.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function (dbPantrys) {
+    console.log(dbPantrys);
+  });
+});
+
+app.post("/api/donates", function (req, res) {
+  db.Pantry.create({
+    ein: req.body.ein,
+    charityName: req.body.charityName,
+    address1: req.body.address1,
+    address1: req.body.address1,
+    city: req.body.city,
+    state: req.body.state,
+    zip: req.body.zip,
+    wishlist: req.body.wishlist,
+    UserId: req.body.UserId
+  }).then(function (dbPantrys) {
+    console.log(dbPantrys);
+  });
+});
 
