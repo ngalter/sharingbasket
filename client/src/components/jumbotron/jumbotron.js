@@ -1,5 +1,6 @@
 import React from "react";
-import "./jumbotron_styles.css"
+import "./jumbotron_styles.css";
+import { Link } from "react-router-dom";
 
 // Masthead
 
@@ -13,8 +14,9 @@ function Jumbotron() {
             </div>
             <div className="col-lg-8 align-self-baseline">
                 <p className="tagLine">Working Together to End Hunger</p>
-                <a href="#login" id="loginBtn" className="btn btn-lg btn-outline-primarypx-4 js-scroll-trigger">View Local Pantries</a>
+                <div id="loginBtn" className="btn btn-lg btn-outline-primarypx-4 js-scroll-trigger"><button><Link to="/search" style={{ color: 'white' }}>View Local Pantries</Link></button></div>
             </div>
+            
         </div>
     </div>
 </header>

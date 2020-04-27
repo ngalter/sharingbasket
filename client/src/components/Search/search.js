@@ -1,6 +1,9 @@
 import { Col, Row, Container } from "../../components/Grid/";
 import { Input, FormBtn } from "../../components/Form";
 import React, { useState, useEffect } from "react";
+import NavBar2 from "../nav2/nav";
+import Jumbotron3 from "../jumbotron3/jumbotron";
+
 import API from "../../utils/API-external";
 
 import "./styles.css"
@@ -44,6 +47,9 @@ const SearchBar = () => {
   };
   return (
     <div>
+    <div>
+    <NavBar2 />
+      <Jumbotron3/>
          <div className="Container-fluid" style={{ textAlign: "center" }}>
           <Input
             onChange={handleInputChange}
@@ -91,6 +97,7 @@ const SearchBar = () => {
               <div className="noResults" style={{ textAlign: "center" }}>No Results to Display</div>
             )}
         </div>
+        </div>      
         </div>
     );
   };

@@ -6,8 +6,7 @@ import SignUpPage from "./components/pages/SignUpPage/signUpPage"
 import CustomerPage from "./components/pages/CustomerPage/customerpage"
 import WishList from "./components/WishList/wishList";
 import StorePage from "./components/pages/StorePage/storePage";
-import SearchBar from "./components/Search/search";
-import AccessibilityPage from "./components/pages/Accessibilty /accessibilityPage";
+import Search from "./components/Search/search";
 import HomePage from "./components/pages/HomePage/Home";
 
 import "./appStyles.css"
@@ -35,16 +34,13 @@ function App() {
         <Route exact path={["/", "/pantry"]}>
           <SignUpPage />
         </Route>
-        <Route exact path={["/", "/accessibility"]}>
-          <AccessibilityPage />
+        <Route exact path={"/search"}>
+          <Search />
         </Route>
         <Route exact path={["/", "/store"]}>
           <StorePage />
           </Route>
-        <Route exact path={["/", "/searchbar"]}>
-          <SearchBar />
-          </Route>
-          <Route exact path={["/", "/wishlist"]}>
+          <Route exact path={"/wishlist"}>
           <WishList />
         </Route>
       </Switch>
