@@ -5,7 +5,6 @@ require('dotenv').config();
 // Requiring passport as we've configured it
 var path = require("path");
 var passport = require("./config/passport");
-app.use(express.static('public'))
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 3001;
@@ -17,7 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Serve static files from the React app
-// app.use(express.static(path.join(__dirname, 'client/build'))
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // We need to use sessions to keep track of our user's login status
 app.use(
