@@ -19,7 +19,9 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 // Requiring our routes
 
 require("./routes/api-routes.js")(app);
-
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 // We need to use sessions to keep track of our user's login status
 app.use(
@@ -28,9 +30,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync({ force: true }).then(function() {
