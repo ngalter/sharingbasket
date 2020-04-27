@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Requiring our routes
 
-require("./routes/api-routes.js")(app);
+require("./routes/api-routes")(app);
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
