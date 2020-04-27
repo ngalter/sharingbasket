@@ -19,7 +19,7 @@ function App() {
         <Route exact path={"/"}>
           <HomePage />
         </Route>
-        <Route exact path={["/login-client"]}>
+        <Route exact path={"/login-client"}>
           <LoginPageClient />
         </Route>
         <Route exact path={["/", "/login-pantry"]}>
