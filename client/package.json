@@ -1,24 +1,13 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "engines": {
-      "node": "12.14.x"
-    },
-  
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "dot-env": "0.0.1",
-    "dotenv": "^8.2.0",
-    "path": "^0.12.7",
     "react": "^16.13.1",
-    "react-bootstrap": "^1.0.1",
-    "react-bootstrap-navbar": "^1.1.0",
     "react-dom": "^16.13.1",
-    "react-external-link": "^1.1.1",
-    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1"
   },
   "scripts": {
