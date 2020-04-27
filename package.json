@@ -30,7 +30,6 @@
     "dotenv": "^8.2.0",
     "env": "0.0.2",
     "express": "^4.17.0",
-    "express-handlebars": "^3.1.0",
     "express-session": "^1.16.1",
     "if-env": "^1.0.4",
     "jquery": "^3.4.1",
@@ -39,17 +38,18 @@
     "nodemon": "^2.0.3",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "per-env": "^1.0.2",
     "proxy": "^1.0.1",
     "sequelize": "^5.21.7"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brittanymorrisdesign/Group-Project-3.git"
+    "url": "git+https://github.com/ngalter/sharingbasket.git"
   },
   "bugs": {
-    "url": "https://github.com/brittanymorrisdesign/Group-Project-3/issues"
+    "url": "https://github.com/ngalter/sharingbasket/issues"
   },
-  "homepage": "https://github.com/brittanymorrisdesign/Group-Project-3#readme",
+  "homepage": "https://github.com/ngalter/sharingbasket#readme",
   "description": ""
 }
