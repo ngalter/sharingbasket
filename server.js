@@ -15,7 +15,8 @@ var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static(__dirname + 'public'));
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build'));
 
 // We need to use sessions to keep track of our user's login status
 app.use(
@@ -26,9 +27,14 @@ app.use(passport.session());
 
 // Requiring our routes
 require("./routes")(app);
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+// });
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
+
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync({ force: true }).then(function() {
