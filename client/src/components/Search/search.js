@@ -1,15 +1,17 @@
+
 // import React from "react";
 //import API from "../../utils/API-external";
-import { Col, Row, Container } from "../../components/Grid/";
-import { Input, FormBtn } from "../../components/Form/";
 
 
+import { Input, FormBtn } from "../../components/Form";
 
 import React, { useState, useEffect } from "react";
-// import { makeStyles } from '@material-ui/core/styles';
+import NavBar2 from "../nav2/nav";
+import Jumbotron3 from "../jumbotron3/jumbotron";
 
-// import InputBase from '@material-ui/core/InputBase';
 import API from "../../utils/API-external";
+
+import "./styles.css"
 
 
 
@@ -50,54 +52,60 @@ const SearchBar = () => {
   };
   return (
     <div>
-      <div>
-        <h1>Pantries</h1>
-        <form>
+    <div>
+    <NavBar2 />
+      <Jumbotron3/>
+         <div className="Container-fluid" style={{ textAlign: "center" }}>
+         <h2 className="text-center mt-0 titleText">Search for the nearest Food Pantry</h2>
           <Input
             onChange={handleInputChange}
             name="city"
             placeholder="City (required)"
+            style={{ textAlign: "center" }}
           />
           <Input
             onChange={handleInputChange}
             name="state"
             placeholder="State (required)"
+            style={{ textAlign: "center" }}
           />
           <FormBtn
             disabled={!(formObject.city && formObject.state)}
             onClick={handleFormSubmit}
           >
-            Search
+            <i className="fas fa-search"></i>
             </FormBtn>
-        </form>
+            </div>
         <div>
-
           {pantries.length ? (
-            <div>
-              <th aria-label="simple table"></th>
-              <table>
-                <tr >
-                  <th align="left" >Pantry Name</th>
-                  <th align="left">Street Address1</th>
-                  <th align="left">Zip Code</th>
-                </tr>
+               <table className="table-responsive">
+               <table className="table table-hover" >
+                <thead>
+                  <tr>
+                  <th scope="col">Pantry Name</th>
+                  <th scope="col">Street Address</th>
+                  <th scope="col">Zip Code</th>
+                  </tr>
+                </thead>
+                <tbody>
+            
                 {pantries.map(pantry => (
                   <tr key={pantry.ein}>
-                    <td align="left" >{pantry.charityName}</td>
-                    <td align="left" >{pantry.mailingAddress.streetAddress1}&nbsp;{pantry.mailingAddress.streetAddress2}</td>
-                    <td align="left" >{pantry.mailingAddress.postalCode}</td>
+                     <td>{pantry.charityName}</td>
+                     <td>{pantry.mailingAddress.streetAddress1}&nbsp;{pantry.mailingAddress.streetAddress2}</td>
+                    <td>{pantry.mailingAddress.postalCode}</td>
                   </tr>
                 ))}
+                  </tbody>
               </table>
-            </div>
+              </table>
           ) : (
-              <h3>No Results to Display</h3>
+              <div className="noResults" style={{ textAlign: "center" }}>No Results to Display</div>
             )}
         </div>
-      </div>
-    </div>
+        </div>      
+        </div>
     );
   };
 
 export default SearchBar;
-

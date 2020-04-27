@@ -33,13 +33,15 @@ form {
     }
 }
 
-form .form-group {
+form .formGroup {
     margin: 0;
     width: 100%;
 }
 
 form .form-group input {
     width: 100%;
+    margin: 10px;
+    padding: 5px;
 }
 
 form .formBtn {
@@ -56,14 +58,47 @@ form .formBtn i {
     background-color: #73B81B;
     border-color: #73B81B;
     color: #454545;
+    cursor: pointer !important;
+    margin: 6px !important;
+    
 }
 
 .btn-success:hover {
     background-color:#73B81B;
     border-color: #73B81B;
     color: white;
+    cursor: pointer;
 }
 
 .form-control {
     box-shadow: none; /* Removes blue halo */
+}
+
+.btnSearch {
+    margin: auto 0 !important;
+}
+
+
+.table {
+    margin: 40px;
+}
+
+input.form-control {
+    padding: 10px !important;
+    margin: 10px !important;
+}
+
+.form-group {
+   width: 30%;
+   margin: 0 auto;
+   margin-left: 20px;
+   display: inline-block;
+}
+
+.text-muted2 {
+    margin: 0 auto !important;
+}
+
+div.noResults {
+    padding: 10px !important;
 }

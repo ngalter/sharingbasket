@@ -4,10 +4,9 @@ import LoginPageClient from "./components/pages/LoginPageClient/Login"
 import LoginPantryPage from "./components/pages/LoginPagePantry/LoginPantry"
 import SignUpPage from "./components/pages/SignUpPage/signUpPage"
 import CustomerPage from "./components/pages/CustomerPage/customerpage"
-import StorePage from "./components/pages/StorePage/storePage";
-import SearchBar from "./components/Search/search";
 import WishList from "./components/WishList/wishList";
-import AccessibilityPage from "./components/pages/Accessibilty /accessibilityPage";
+import StorePage from "./components/pages/StorePage/storePage";
+import Search from "./components/Search/search";
 import HomePage from "./components/pages/HomePage/Home";
 
 import "./appStyles.css"
@@ -17,10 +16,10 @@ function App() {
     <Router>
     <div>
       <Switch>
-        <Route exact path={["/", "/home"]}>
+        <Route exact path={"/"}>
           <HomePage />
         </Route>
-        <Route exact path={["/login-client"]}>
+        <Route exact path={"/login-client"}>
           <LoginPageClient />
         </Route>
         <Route exact path={["/", "/login-pantry"]}>
@@ -35,16 +34,13 @@ function App() {
         <Route exact path={["/", "/pantry"]}>
           <SignUpPage />
         </Route>
-        <Route exact path={["/", "/accessibility"]}>
-          <AccessibilityPage />
+        <Route exact path={"/search"}>
+          <Search />
         </Route>
         <Route exact path={["/", "/store"]}>
           <StorePage />
           </Route>
-        <Route exact path={["/", "/searchbar"]}>
-          <SearchBar />
-          </Route>
-          <Route exact path={["/", "/wishlist"]}>
+          <Route exact path={"/wishlist"}>
           <WishList />
         </Route>
       </Switch>

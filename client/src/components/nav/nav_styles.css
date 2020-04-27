@@ -149,6 +149,7 @@
     color: rgba(0, 0, 0, 0.9);
     line-height: inherit;
     white-space: nowrap;
+    cursor: pointer;
   }
   .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none;
