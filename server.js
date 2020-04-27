@@ -14,20 +14,14 @@ var db = require("./models");
 var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'client/build')));
+// app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Requiring our routes
 require("./routes/api-routes.js")(app);
 
-  app.get('*', function(req, res) {
+  app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
   });
-
-
-
-// app.get('/', function (req, res) {
-//   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-// });
 
 // We need to use sessions to keep track of our user's login status
 app.use(
