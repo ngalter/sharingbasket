@@ -1,8 +1,6 @@
 /* eslint-disable */
 var db = require("../models");
-var Sequelize = require("sequelize");
 var passport = require("../config/passport");
-const axios = require("axios");
 
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
