@@ -4,7 +4,6 @@ import LoginPageClient from "./components/pages/LoginPageClient/Login"
 import LoginPantryPage from "./components/pages/LoginPagePantry/LoginPantry"
 import SignUpPage from "./components/pages/SignUpPage/signUpPage"
 import CustomerPage from "./components/pages/CustomerPage/customerpage"
-import WishlistPage from "./components/pages/wishListPage/wishListPage";
 import StorePage from "./components/pages/StorePage/storePage";
 import SearchBar from "./components/Search/search";
 import WishList from "./components/WishList/wishList";
