@@ -14,7 +14,7 @@ function Jumbotron() {
             </div>
             <div className="col-lg-8 align-self-baseline">
                 <p className="tagLine">Working Together to End Hunger</p>
-                <div id="loginBtn" className="btn btn-lg btn-outline-primarypx-4 js-scroll-trigger"><button><Link to="/search" style={{ color: 'white' }}>View Local Pantries</Link></button></div>
+                <button type="button" href="#login" id="loginBtn" className="btn btn-lg btn-outline-primarypx-4 loginBtn"><Link to="/search" style={{ color: 'white' }}>View Local Pantries</Link></button>
             </div>
             
         </div>
