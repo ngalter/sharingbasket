@@ -28,12 +28,8 @@ app.use(passport.session());
 
 // Requiring our routes
 require("./routes")(app);
-// app.get('/', function (req, res) {
-//   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-// });
-
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 
 
