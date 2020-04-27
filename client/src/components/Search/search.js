@@ -1,6 +1,9 @@
 import { Col, Row, Container } from "../../components/Grid/";
 import { Input, FormBtn } from "../../components/Form";
 import React, { useState, useEffect } from "react";
+import NavBar2 from "../nav2/nav";
+import Jumbotron3 from "../jumbotron3/jumbotron";
+
 import API from "../../utils/API-external";
 
 import "./styles.css"
@@ -44,7 +47,11 @@ const SearchBar = () => {
   };
   return (
     <div>
+    <div>
+    <NavBar2 />
+      <Jumbotron3/>
          <div className="Container-fluid" style={{ textAlign: "center" }}>
+         <h2 className="text-center mt-0 titleText">Search for the nearest Food Pantry</h2>
           <Input
             onChange={handleInputChange}
             name="city"
@@ -66,8 +73,8 @@ const SearchBar = () => {
             </div>
         <div>
           {pantries.length ? (
-               <table class="table-responsive">
-               <table class="table table-hover" >
+               <table className="table-responsive">
+               <table className="table table-hover" >
                 <thead>
                   <tr>
                   <th scope="col">Pantry Name</th>
@@ -91,6 +98,7 @@ const SearchBar = () => {
               <div className="noResults" style={{ textAlign: "center" }}>No Results to Display</div>
             )}
         </div>
+        </div>      
         </div>
     );
   };

@@ -1,11 +1,11 @@
 import React from "react";
-import data from "../../data/wishlist";
-import NavBar2 from "../../nav2/nav";
-import Jumbotron3 from "../../jumbotron3/jumbotron";
+import data from "../../components/data/wishlist";
+import NavBar2 from "../nav2/nav";
+import Jumbotron3 from "../jumbotron3/jumbotron";
 
 import "./styles.css"
 
-const WishListPage = () => {
+const WishList = () => {
 
   return (
   <div>
@@ -38,4 +38,4 @@ const WishListPage = () => {
     );
   };
 
-export default WishListPage;
+export default WishList

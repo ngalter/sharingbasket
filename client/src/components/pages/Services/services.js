@@ -14,7 +14,7 @@ function Nav() {
       <div className="card card-1 servicesCard">
         <h3>Accessiblity</h3>
         <p className="text-muted">Search for the nearest food pantry in your area.</p>
-        <button type="button" className="btn btn-primary loginBtn"><Link to="/accessibility" style={{ color: 'white' }}>Search</Link></button>
+        <button type="button" className="btn btn-primary loginBtn"><Link to="/search" style={{ color: 'white' }}>Search</Link></button>
       </div>
     </div>
     <div className="col-md-4">

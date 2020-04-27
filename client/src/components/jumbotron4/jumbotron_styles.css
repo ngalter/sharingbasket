@@ -1,0 +1,49 @@
+   
+header.masthead-3 {
+  padding-top: 120px;
+  padding-bottom: calc(10rem - 4.5rem);
+  background: url("../../assets/Header_Image3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  /* responsive image */
+  background-repeat:no-repeat;
+  background-size: 100%;
+  background-position:top left;
+}
+
+   header.masthead-3 h1 {
+    font-size: 2.25rem;
+  }
+  @media (min-width: 992px) {
+    header.masthead-3 {
+      padding-top: 4.5rem;
+      padding-bottom: 0;
+    }
+    header.masthead-3 p {
+      font-size: 1.15rem;
+    }
+    header.masthead-3 h1 {
+      font-size: 3rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    header.masthead-3 h1 {
+      font-size: 3.5rem;
+    }
+  }
+  
+  #loginBtn:focus, .btn:active {
+    box-shadow: none; /* Removes blue halo */
+  }
+  
+  .tagLine {
+    color:white;
+    margin: 30px;
+  }
+
+  .logoJumbotron3 {
+    max-width: 30%;
+    height: auto;
+  }
