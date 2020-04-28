@@ -33,7 +33,10 @@ const SearchBar = () => {
   function loadPantries() {
     API.getPantries(formObject.state, formObject.city)
       .then(
-      res => setPantries(res.data)
+        res => {
+          console.log(res.data);
+          setPantries(res.data)
+        }
     )
       .catch(err => console.log(err));
   };

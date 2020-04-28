@@ -1,5 +1,6 @@
-/* eslint-disable */
+const axios = require("axios");
 var db = require("../models");
+require('dotenv').config()
 var passport = require("../config/passport");
 
 module.exports = function (app) {
@@ -132,4 +133,18 @@ module.exports = function (app) {
     });
   });
 
+  app.post("/getpantries", function (req, res) {
+  const BASEURL = "https://api.data.charitynavigator.org/v2/Organizations?";
+  const APP_KEY = process.env.REACT_APP_APP_KEY;
+  const APP_ID = process.env.REACT_APP_APP_ID;
+  const category = "food+pantry";
+  const resultCount = 8;
+  let url = `${BASEURL}app_id=${APP_ID}&app_key=${APP_KEY}&pageSize=${resultCount}&search=${category}&state=${req.body.state}&city=${req.body.city}`;
+    axios.get(url).then(
+      apiData => {
+        return res.json(apiData.data);
+      }).catch((err) => console.log(err)
+    );
+  }) 
 };
+
