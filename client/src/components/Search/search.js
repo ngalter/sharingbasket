@@ -92,6 +92,7 @@ const SearchBar = () => {
                      <td>{pantry.charityName}</td>
                      <td>{pantry.mailingAddress.streetAddress1}&nbsp;{pantry.mailingAddress.streetAddress2}</td>
                     <td>{pantry.mailingAddress.postalCode}</td>
+                    <td><FormBtn disabled><i class="far fa-question-circle"></i> info</FormBtn></td>
                   </tr>
                 ))}
                   </tbody>

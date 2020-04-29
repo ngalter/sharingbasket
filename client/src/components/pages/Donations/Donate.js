@@ -14,27 +14,21 @@ function Donates() {
 
   // Load all pantries and store them with tries
   useEffect(() => {
+    getId();
     setFormObject({
       item: "",
       qty: ""
     })
-    getId()
-    loadDonates()
   }, []);
 
   // Loads all pantries and sets them to books
  function getId() {
     API.getUserInfo()
-      .then(
-        res => {
-          console.log("here:",res.data.id)
-          setUserId( res.data.id );
-        }
-      )
-      .catch(err => console.log(err));
-  }
-  function loadDonates() {
-    API.getDonates( userid )
+      .then(res => loadDonates(res.data.id))
+ }
+  
+  function loadDonates(id) {
+    API.getDonates( id )
       .then(
         res => {
           setDonates(res.data);
@@ -43,8 +37,8 @@ function Donates() {
       .catch(err => console.log(err));
   };
   function saveDonations() {
-    console.log(userid);
-    API.saveDonates(formObject.item, formObject.qty, userid)
+    API.getUserInfo().then(res =>
+    API.saveDonates(formObject.item, formObject.qty, res.data.id))
       .then(
         res => {
           console.log(res.data);
@@ -63,7 +57,7 @@ function Donates() {
     event.preventDefault();
     if (formObject.item && formObject.qty) {
       saveDonations();
-      loadDonates();
+      getId();
     };
   };
   return (
@@ -107,7 +101,8 @@ function Donates() {
                 {donates.map(item => (
                   <tr key={item.id}>
                      <td>{item.item}</td>
-                     <td>{item.qty}</td>
+                    <td>{item.qty}</td>
+                    <td><i class="far fa-check-circle"></i> Delivered</td>
                   </tr>
                 ))}
                   </tbody>

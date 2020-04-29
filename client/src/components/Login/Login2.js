@@ -79,7 +79,6 @@ const Login = () => {
                   <thead>
                     <tr>
                     <th scope="col">Email</th>
-                    <th scope="col">Password</th>
                     <th scope="col">UserId</th>
                     </tr>
                   </thead>
@@ -87,8 +86,8 @@ const Login = () => {
               
                   {login.map(item => (
                     <tr key={item.email}>
-                       <td>{item.password}</td>
-                       <td>{item.id}</td>
+                       <td>Welcome: {item.email}</td>
+                       <td>User #: {item.id}</td>
                     </tr>
                   ))}
                     </tbody>

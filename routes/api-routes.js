@@ -120,7 +120,7 @@ module.exports = function (app) {
         return res.json(dbData);
       }).catch((err) => console.log(err)
       );
-    });
+    })
 
     app.post("/getpantries", function (req, res) {
       const BASEURL = "https://api.data.charitynavigator.org/v2/Organizations?";
@@ -128,6 +128,7 @@ module.exports = function (app) {
       const APP_ID = process.env.REACT_APP_APP_ID;
       const category = "food+pantry";
       const resultCount = 8;
+      console.log("vars:",process.env.REACT_APP_APP_KEY, process.env.REACT_APP_APP_ID);
       let url = `${BASEURL}app_id=${APP_ID}&app_key=${APP_KEY}&pageSize=${resultCount}&search=${category}&state=${req.body.state}&city=${req.body.city}`;
       axios.get(url).then(
         apiData => {
