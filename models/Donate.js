@@ -5,11 +5,8 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         },
         qty: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                isNumber: true
-              }
+            type: DataTypes.STRING,
+            allowNull: true,
         }
     });
   
