@@ -93,7 +93,8 @@ function Donates() {
                 <thead>
                   <tr>
                   <th scope="col">Donation</th>
-                  <th scope="col">Number/Qty</th>
+                    <th scope="col">Number/Qty</th>
+                    <th scope="col">Status</th>
                   </tr>
                 </thead>
                 <tbody>
