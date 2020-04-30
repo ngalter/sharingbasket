@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
   User.associate = function(models) {
     // Associating User with 
     // When an User is deleted, also delete any associated 
-    User.hasMany(models.Pantry, {
+    User.hasMany(models.Donate, {
       onDelete: "cascade"
     });
   };

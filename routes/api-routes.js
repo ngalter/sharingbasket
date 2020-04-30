@@ -55,8 +55,8 @@ module.exports = function (app) {
       });
     }
   });
-  //---PANTRYS----
-  app.get("/api/pantrys", function (req, res){
+  //---Wishes----
+  app.get("/api/wishes", function (req, res){
     db.Pantry.findAll({
       }).then(function (dbData) {
         return res.json(dbData);
