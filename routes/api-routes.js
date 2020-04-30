@@ -57,7 +57,7 @@ module.exports = function (app) {
   });
   //---Wishes----
   app.get("/api/wishes", function (req, res){
-    db.Pantry.findAll({
+    db.Wish.findAll({
       }).then(function (dbData) {
         return res.json(dbData);
     });
