@@ -56,14 +56,10 @@ module.exports = function (app) {
     }
   });
   //---PANTRYS----
-  app.get("/api/:UserId/pantrys", function (req, res) {
+  app.get("/api/pantrys", function (req, res){
     db.Pantry.findAll({
-      raw: true,
-      where: {
-        UserId: req.params.UserId
-      }
-    }).then(function (dbPantrys) {
-      console.log(dbPantrys);
+      }).then(function (dbData) {
+        return res.json(dbData);
     });
   });
 
