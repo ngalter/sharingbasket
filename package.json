@@ -43,6 +43,7 @@
     "per-env": "^1.0.2",
     "proxy": "^1.0.1",
     "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.4.1",
     "sequelize": "^5.21.7"
   },
   "repository": {
