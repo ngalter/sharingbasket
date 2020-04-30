@@ -99,7 +99,7 @@ const SearchBar = () => {
               </table>
               </table>
           ) : (
-              <div className="noResults" style={{ textAlign: "center" }}>No Results to Display</div>
+              <div className="noResults" style={{ textAlign: "center" }}></div>
             )}
         </div>
         </div>      

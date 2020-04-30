@@ -1,38 +1,104 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
+import { Input, FormBtn } from "../Form";
+import NavBar2 from "../../components/nav2/nav"
+import API from "../../utils/API";
+import "./styles.css"
 
-class LoginForm extends React.Component {
+
+const Login = () => {
+
+    const [login, setLogin] = useState([]);
+    const [formObject, setFormObject] = useState({});
   
-  render() {
-      return (
-        <div className="wrapper">
-          <form 
-            onSubmit={this.handleSubmit}
-            className="form-signin">
-            <h2 className="form-signin-heading">{this.props.title}</h2>
-            <h3>Sign In</h3>
-            <input
-              type="text"
+    // Load all pantries and store them with setPantries
+    useEffect(() => {
+      // loadPantries()
+      setFormObject({
+        email: "",
+        password: ""
+      })
+    },[]);
+  
+    // Loads all pantries and sets them to books
+  function loadLogin() {
+    API.getLogin(formObject.email, formObject.password)
+      .then(
+        res => {
+          console.log(res.data);
+          setLogin(res.data)
+        })
+        .catch((err) =>
+          console.log(err));
+        };
+    
+    function handleInputChange(event) {
+      const { name, value } = event.target;
+      setFormObject({ ...formObject, [name]: value })
+  }
+  
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      if (formObject.email && formObject.password) {
+        loadLogin();
+      };
+    };
+    return (
+      <div>
+      <div>
+      <NavBar2 />
+           <div className="Container-fluid" style={{ textAlign: "center" }}>
+           <h2 className="text-center mt-0 titleText">Login</h2>
+            <Input
+              onChange={handleInputChange}
               className="form-control"
-              name="username"
-              placeholder="Email Address"
+              name="email"
+              placeholder="Email"
+              style={{ textAlign: "center" }}
             />
-            <input
-              type="password"
+            <Input
+              onChange={handleInputChange}
               className="form-control"
               name="password"
               placeholder="Password"
+              style={{ textAlign: "center" }}
             />
-        
-            <button className="btn btn-lg btn-primary btn-block" type="submit">
-              Login
-            </button>
-            <p className="text-muted orLogin"style={{ display: "flex", justifyContent: "center" }}>Sign up&nbsp;<Link to="/sign-up">Here</Link></p>
-          </form>
-          <p className="text-muted orLogin"style={{ display: "flex", justifyContent: "center" }}>or go back&nbsp;<Link to="/">Home</Link></p>
-        </div>
+            <FormBtn
+              disabled={!(formObject.email && formObject.password)}
+              onClick={handleFormSubmit}
+            >
+              <i className="fas fa-search"></i>
+              </FormBtn>
+              </div>
+          <div>
+            {login.length ? (
+                 <table className="table-responsive">
+                 <table className="table table-hover" >
+                  <thead>
+                    <tr>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">UserId</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+              
+                  {login.map(item => (
+                    <tr key={item.email}>
+                       <td>{item.password}</td>
+                       <td>{item.id}</td>
+                    </tr>
+                  ))}
+                    </tbody>
+                </table>
+                </table>
+            ) : (
+           <p className="text-muted orLogin"style={{ display: "flex", justifyContent: "center" }}>Sign up&nbsp;<Link to="/sign-up">Here</Link></p>
+              )}
+          </div>
+          </div>      
+          </div>
       );
-  }
-}
-
-export default LoginForm;
+    };
+  
+  export default Login;

@@ -1,9 +1,10 @@
 import React from "react";
 import Nav from "../../nav/nav";
 import About from "../../about/about";
-import Login from "../../LandingPage/Login";
+//import Login from "../../LandingPage/Login";
+import Login from "../../Login/Login"
 import Services from "../Services/services"
-import SignUpPage from "../../SignupNancy/Signup"
+//import SignUpPage from "../../SignupNancy/Signup"
 import GetInvolved from "../../Get Involved/getinvolved";
 import Jumbotron from "../../jumbotron/jumbotron";
 import "./styles.css"
@@ -13,8 +14,7 @@ function HomePage() {
       <div>
       <Nav />
       <Jumbotron/>
-        <About />
-        <SignUpPage />
+      <About />
       <Login />
       <Services />
       <GetInvolved />

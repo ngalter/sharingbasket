@@ -29,7 +29,7 @@ function Nav() {
     <div className="col-md-4">
       <div className="card card-3 servicesCard">
         <h3>Wishlist</h3>
-        <p className="text-muted">See the list of what food pantries are asking for.</p>
+        <p className="text-muted">View the list of what food pantries are asking for.</p>
                   <button type="button" className="btn btn-primary loginBtn"><Link to="/wishlist" style = {{ color: 'white' }}>View</Link></button>
       </div>
     </div>

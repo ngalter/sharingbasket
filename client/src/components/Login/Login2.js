@@ -1,10 +1,10 @@
-import { Input, FormBtn } from "../Form";
+import { Input, FormBtn } from "../../Form/";
 
 import React, { useState, useEffect } from "react";
-import NavBar2 from "../nav2/nav";
-import Jumbotron3 from "../jumbotron3/jumbotron";
+import NavBar2 from "../../nav2/";
+import Jumbotron3 from "../../jumbotron3/jumbotron";
 
-import API from "../../utils/API";
+import API from "../../../utils/API";
 
 import "./styles.css"
 
