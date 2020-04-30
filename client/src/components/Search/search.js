@@ -17,10 +17,9 @@ const SearchBar = () => {
 
   // Load all pantries and store them with setPantries
   useEffect(() => {
-    // loadPantries()
     setFormObject({
-      city: "Philadelphia",
-      state: "PA"
+      city: "",
+      state: ""
     })
   },[]);
 
@@ -29,7 +28,6 @@ const SearchBar = () => {
     API.getPantries(formObject.state, formObject.city)
       .then(
         res => {
-          console.log(res.data);
           setPantries(res.data)
         }
     )

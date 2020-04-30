@@ -14,7 +14,9 @@ export default {
     const logindata = { email, password }
     return axios.post("/api/login", logindata);
   },
-  // Gets all users
+  getLogout() {
+    return axios.get("/logout");
+  },
   getUsers: function () {
     return axios.get("/api/users");
   },
