@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {
-
+// -- get pantry list from charity navigator external API 
   getPantries(state, city) {
     const pantrydata = { state, city }
     return axios.post("/getpantries", pantrydata);
@@ -37,4 +37,8 @@ export default {
     const donateData = { item, qty, UserId }
     return axios.post("/api/donates", donateData);
   },
+  // - Get Pantry wish list from mysql database routing 
+  getWishes: function () {
+    return axios.get("/api/pantrys");
+  }
 };
