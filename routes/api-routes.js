@@ -9,7 +9,7 @@ module.exports = function(app) {
   // Otherwise the user will be sent an error
   app.post('/api/login', passport.authenticate('local'), function(req, res) {
     // Sending back a password, even a hashed password, isn't a good idea
-    res.json({
+    return res.json({
       email: req.user.email,
       id: req.user.id,
     });
@@ -55,8 +55,13 @@ module.exports = function(app) {
       });
     }
   });
+<<<<<<< HEAD
   // ---PANTRYS----
   app.get('/api/users/:UserId/pantrys', function(req, res) {
+=======
+  //---PANTRYS----
+  app.get("/api/:UserId/pantrys", function (req, res) {
+>>>>>>> 5c32b01d8cf3c4ca8d8f4e2bf516625739ec6c56
     db.Pantry.findAll({
       raw: true,
       where: {
@@ -93,6 +98,7 @@ module.exports = function(app) {
     });
   });
 
+<<<<<<< HEAD
   // ---DONATES----
   app.get('/api/users/:UserId/donates', function(req, res) {
     db.Pantry.findAll({
@@ -143,4 +149,49 @@ module.exports = function(app) {
       .then(apiData => res.json(apiData.data))
       .catch(err => console.log(err));
   });
+=======
+  //---DONATES----
+  app.get("/api/donates/:UserId", function (req, res) {
+    // app.get("/api/donates", function (req, res)
+    {
+      db.Donate
+        .findAll({
+          where: {
+            UserId: req.params.UserId
+          }
+        })
+        .then(function (dbData) {
+          console.log(dbData);
+          return res.json(dbData);
+        }).catch((err) => console.log(err)
+        );
+    };
+
+    app.post(`/api/donates/`, function (req, res) {
+      db.Donate.create({
+        item: req.body.item,
+        qty: req.body.qty,
+        UserId: req.body.UserId
+      }).then(function (dbData) {
+        return res.json(dbData);
+      }).catch((err) => console.log(err)
+      );
+    })
+
+    app.post("/getpantries", function (req, res) {
+      const BASEURL = "https://api.data.charitynavigator.org/v2/Organizations?";
+      const APP_KEY = process.env.REACT_APP_APP_KEY;
+      const APP_ID = process.env.REACT_APP_APP_ID;
+      const category = "food+pantry";
+      const resultCount = 8;
+      console.log("vars:",process.env.REACT_APP_APP_KEY, process.env.REACT_APP_APP_ID);
+      let url = `${BASEURL}app_id=${APP_ID}&app_key=${APP_KEY}&pageSize=${resultCount}&search=${category}&state=${req.body.state}&city=${req.body.city}`;
+      axios.get(url).then(
+        apiData => {
+          return res.json(apiData.data);
+        }).catch((err) => console.log(err)
+        );
+    })
+  });
+>>>>>>> 5c32b01d8cf3c4ca8d8f4e2bf516625739ec6c56
 };

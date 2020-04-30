@@ -35,9 +35,17 @@ app.get('/', function(req, res) {
 });
 
 // Syncing our database and logging a message to the user upon success
+<<<<<<< HEAD
 db.sequelize.sync({ force: true }).then(function() {
   // Start the API server
   app.listen(PORT, function() {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
   });
+=======
+db.sequelize.sync({ force: false }).then(function() {
+// db.sequelize.sync().then(function() {
+ // Start the API server
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+>>>>>>> 5c32b01d8cf3c4ca8d8f4e2bf516625739ec6c56
 });
