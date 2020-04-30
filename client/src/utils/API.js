@@ -39,6 +39,6 @@ export default {
   },
   // - Get Pantry wish list from mysql database routing 
   getWishes: function () {
-    return axios.get("/api/pantrys");
+    return axios.get("/api/wishes");
   }
 };
