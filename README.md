@@ -1,5 +1,5 @@
 ## Sharing Basket
-<img width="1000" alt="portfolio" src="https://github.com/ngalter/sharing-basket/blob/master/client/public/assets/sharingbasketimg.jpg">
+<img width="1000" alt="sharingbasket" src="https://github.com/ngalter/sharingbasket/blob/master/client/public/assets/sharingbasketimg.jpg">
 ## Description
 Sharing Basket is an application that connects community food pantries with community members who wish to contribute and provide support in a tangible way.  The app allows food pantries to provide wish lists of desired and needed items.  It allows local community members to easily find local pantries and see what they need the most.
 
