@@ -11,7 +11,7 @@ Sharing Basket uses a React.js front end with Bootstrap.  It uses node.js, expre
 Sharing Basket is a group project created by
 https://github.com/ngalter,
 https://github.com/brittanymorrisdesign,
-https://github.com/DommiDan/testing2
+https://github.com/DommiDan
 
 ## Deployment
 Sharing Basket is deployed on Heroku at:
