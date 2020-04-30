@@ -14,6 +14,7 @@ function Donates() {
 
   // Load all pantries and store them with tries
   useEffect(() => {
+    getId();
     setFormObject({
       item: "",
       qty: ""
