@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, } from "react-router-dom";
-import LoginPageClient from "./components/Login/Login.js"
+import LoginPageClient from "./components/pages/LoginPageClient/Login"
 import LoginPantryPage from "./components/pages/LoginPagePantry/LoginPantry"
 import SignUpPage from "./components/pages/SignUpPage/signUpPage"
 import CustomerPage from "./components/pages/CustomerPage/customerpage"
@@ -28,7 +28,7 @@ function App() {
         <Route exact path={["/", "/customer"]}>
           <CustomerPage />
         </Route>
-        <Route exact path={["/", "/pantry"]}>
+        <Route exact path={["/", "/sign-up"]}>
           <SignUpPage />
         </Route>
         <Route exact path={"/search"}>
