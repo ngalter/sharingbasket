@@ -10,11 +10,10 @@ import "./styles.css"
 function Donates() {
   const [donates, setDonates] = useState([]);
   const [formObject, setFormObject] = useState({});
-  const [userid, setUserId] = useState({});
+
 
   // Load all pantries and store them with tries
   useEffect(() => {
-    getId();
     setFormObject({
       item: "",
       qty: ""
