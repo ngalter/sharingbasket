@@ -7,6 +7,12 @@ Sharing Basket is an application that connects community food pantries with comm
 ## Technologies
 Sharing Basket uses a React.js front end with Bootstrap.  It uses node.js, express, mysql and sequelizer for the back end.  Passport is used for login authentication.  External data is retrieved from the CharityNavigator API.
 
+## Created By
+Sharing Basket is a group project created by
+https://github.com/ngalter
+https://github.com/brittanymorrisdesign
+https://github.com/DommiDan/testing2
+
 ## Deployment
 Sharing Basket is deployed on Heroku at:
 https://sharing-basket.herokuapp.com/
