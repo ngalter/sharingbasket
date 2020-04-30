@@ -63,32 +63,6 @@ module.exports = function(app) {
     });
   });
 
-  app.delete('/api/pantrys/:id', function(req, res) {
-    db.Pantry.destroy({
-      where: {
-        id: req.params.id,
-      },
-    }).then(function(dbPantrys) {
-      console.log(dbPantrys);
-    });
-  });
-
-  app.post('/api/pantrys', function(req, res) {
-    db.Pantry.create({
-      ein: req.body.ein,
-      charityName: req.body.charityName,
-      address1: req.body.address1,
-      address1: req.body.address1,
-      city: req.body.city,
-      state: req.body.state,
-      zip: req.body.zip,
-      wishlist: req.body.wishlist,
-      UserId: req.body.UserId,
-    }).then(function(dbPantrys) {
-      console.log(dbPantrys);
-    });
-  });
-
   //---DONATES----
   app.get("/api/donates/:UserId", function (req, res) {
     // app.get("/api/donates", function (req, res)
