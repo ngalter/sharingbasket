@@ -1,5 +1,4 @@
 import { Input, FormBtn } from "../Form";
-
 import React, { useState, useEffect } from "react";
 import NavBar2 from "../nav2/nav";
 import Jumbotron3 from "../jumbotron3/jumbotron";

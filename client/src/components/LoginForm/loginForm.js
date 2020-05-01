@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { Input, FormBtn } from "../Form";
 import NavBar2 from "../../components/nav2/nav"
 import API from "../../utils/API";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import "./styles.css"
 
 
@@ -10,7 +13,12 @@ const Login = () => {
 
     const [login, setLogin] = useState([]);
     const [formObject, setFormObject] = useState({});
-  
+    
+    //Toast
+    function Notify() {
+      toast("You have successfully logged in!");
+    }
+
     // Load all pantries and store them with setPantries
     useEffect(() => {
       // loadPantries()
@@ -36,15 +44,22 @@ const Login = () => {
       const { name, value } = event.target;
       setFormObject({ ...formObject, [name]: value })
   }
-  
+
     function handleFormSubmit(event) {
       event.preventDefault();
       if (formObject.email && formObject.password) {
         loadLogin();
       };
     };
+
+    //Function for Toast and handleFormSubmit
+    function submitFunction (e) {
+      handleFormSubmit(e);
+      Notify(e);
+     }
     return (
       <div>
+      <ToastContainer />
       <div>
       <NavBar2 />
            <div className="Container-fluid" style={{ textAlign: "center" }}>
@@ -65,7 +80,7 @@ const Login = () => {
             />
             <FormBtn
               disabled={!(formObject.email && formObject.password)}
-              onClick={handleFormSubmit}
+              onClick={submitFunction}
             >
               <i className="fas fa-search"></i>
               </FormBtn>
