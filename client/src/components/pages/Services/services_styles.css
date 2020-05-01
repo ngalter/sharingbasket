@@ -7,9 +7,9 @@ header.services-masthead {
     background-attachment: scroll;
     background-size: cover;
     /* responsive image */
-    background-repeat:no-repeat;
+    /* background-repeat:no-repeat;
     background-size: 100%;
-    background-position:top left;
+    background-position:top left; */
 }
   
   .servicesCard {
