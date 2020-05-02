@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import React, { useState, useEffect } from "react";
 import NavBar2 from "../../nav2/nav";
 import Header from "../../Header/";
+import { ToastContainer, toast } from "react-toastify";
+import { useHistory } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 import API from "../../../utils/API";
 
 import "./styles.css"
@@ -11,6 +14,7 @@ const Signup = () => {
 
     const [signup, setSignup] = useState([]);
     const [formObject, setFormObject] = useState({});
+    const history = useHistory();
   
     // Load all pantries and store them with setPantries
     useEffect(() => {
@@ -21,13 +25,24 @@ const Signup = () => {
       })
     },[]);
   
+      //Toast
+      function NotifySignUp(quote) {
+        toast(quote);
+      }
+
     // Loads all pantries and sets them to books
     function loadSignup() {
       API.getSignup(formObject.email, formObject.password)
         .then(
           res => {
-            console.log(res.data);
             setSignup(res.data)
+            if (res.data) {
+              console.log(res.data)
+              NotifySignUp("Sign up Successful!")
+              setTimeout(function() {
+              history.push("/home")
+              }, 2000)
+            }
           }
       )
         .catch(err => console.log(err));
@@ -47,6 +62,7 @@ const Signup = () => {
     };
     return (
       <div>
+        <ToastContainer />
       <div>
       <NavBar2 />
         <Header>   

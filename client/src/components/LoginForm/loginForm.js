@@ -54,7 +54,7 @@ const Login = () => {
           Notify("Login Successful!")
           setTimeout(function() {
           history.push("/home")
-          }, 2500)
+          }, 2000)
         }
       }
         )

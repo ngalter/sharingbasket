@@ -24,7 +24,7 @@ function Services() {
         <h3>Pantry Login</h3>
         <p className="text-muted">Add items to your wishlist for future customers.</p>
         <Link to="/login-pantry">
-          <button type="button" className="btn btn-primary loginBtn">Login </button>
+          <button disabled type="button" className="btn btn-primary loginBtn">Login </button>
         </Link>
       </div>
     </div>
