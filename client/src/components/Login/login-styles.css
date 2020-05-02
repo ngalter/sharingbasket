@@ -65,3 +65,7 @@ background-image: url("../../assets/icon-3-01.png");
   margin: 20px;
 }
 } 
+
+.loginBtn {
+  opacity: 100 !important;
+}
