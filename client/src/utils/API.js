@@ -15,6 +15,7 @@ export default {
     return axios.post("/api/login", logindata);
   },
   getLogout() {
+    console.log("api")
     return axios.get("/logout");
   },
   getUsers: function () {

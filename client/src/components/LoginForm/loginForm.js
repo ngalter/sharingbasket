@@ -29,6 +29,20 @@ const Login = () => {
       })
     },[]);
 
+    //Logout
+    function logOut() {
+      API.getLogout()
+      .then(
+        res => {
+          history.push("/home")
+          })
+      .catch((err) => {
+        if (err) {
+          console.log(err)
+        }
+      })
+   }
+
  // Loads all pantries and sets them to books
  function loadLogin() {
   API.getLogin(formObject.email, formObject.password)
@@ -122,6 +136,7 @@ const Login = () => {
             ) : (
            <p className="text-muted orLogin"style={{ display: "flex", justifyContent: "center" }}>Sign up&nbsp;<Link to="/sign-up">Here</Link></p>
               )}
+            <button type="button" onClick={()=>{logOut()}} style={{ display: "flex", justifyContent: "center", alignItems: "center"}} className="btn btn-primary logOutBtn">Logout</button> 
           </div>
           </div>      
           </div>
