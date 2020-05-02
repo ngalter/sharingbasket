@@ -19,7 +19,8 @@ function Donates() {
       item: "",
       qty: ""
     })
-  }, [getId]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Loads all pantries and sets them to books
  function getId() {

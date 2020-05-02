@@ -10,7 +10,7 @@ class LoginClientPage extends React.Component {
       return (
           <div className="hero">
             <Header>
-              <h1 style={{ color: 'white' }}>Customer Login</h1>
+              <h1 style={{ color: 'white' }}>Community Login</h1>
               <h5 style={{ color: 'white' }}>to view pantries</h5>
             </Header>
           <LoginForm>

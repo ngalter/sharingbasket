@@ -12,7 +12,7 @@ function Services() {
           <div className="row">
     <div className="col-md-6">
       <div className="card card-4  loginCard">
-        <h3>Customer Login</h3>
+        <h3>Community Login</h3>
           <p className="text-muted">Login to search for a pantry.</p>
            <Link to="/login-client">
           <button type="button" className="btn btn-primary loginBtn">Login </button>

@@ -37,8 +37,10 @@ const Login = () => {
         setLogin(res.data)
         if (res.data) {
           console.log(res.data)
-          history.push("/home")
           Notify("Login Successful!")
+          setTimeout(function() {
+          history.push("/home")
+          }, 2500)
         }
       }
         )
@@ -84,6 +86,7 @@ const Login = () => {
               onChange={handleInputChange}
               className="form-control"
               name="password"
+              type="password"
               placeholder="Password"
               style={{ textAlign: "center" }}
             />

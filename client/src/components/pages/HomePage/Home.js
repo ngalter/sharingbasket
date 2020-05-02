@@ -11,7 +11,7 @@ function HomePage() {
     return (
       <div>
       <Nav />
-      <Jumbotron/>
+      <Jumbotron />
       <About />
       <Login />
       <Services />
