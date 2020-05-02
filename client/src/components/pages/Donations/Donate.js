@@ -19,7 +19,7 @@ function Donates() {
       item: "",
       qty: ""
     })
-  }, []);
+  }, [getId]);
 
   // Loads all pantries and sets them to books
  function getId() {

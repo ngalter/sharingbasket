@@ -4,19 +4,20 @@ import { Input, FormBtn } from "../Form";
 import NavBar2 from "../../components/nav2/nav"
 import API from "../../utils/API";
 import { ToastContainer, toast } from "react-toastify";
+import { useHistory } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 
 import "./styles.css"
-
 
 const Login = () => {
 
     const [login, setLogin] = useState([]);
     const [formObject, setFormObject] = useState({});
-    
+    const history = useHistory();
+
     //Toast
-    function Notify() {
-      toast("You have successfully logged in!");
+    function Notify(quote) {
+      toast(quote);
     }
 
     // Load all pantries and store them with setPantries
@@ -27,19 +28,28 @@ const Login = () => {
         password: ""
       })
     },[]);
-  
-    // Loads all pantries and sets them to books
-  function loadLogin() {
-    API.getLogin(formObject.email, formObject.password)
-      .then(
-        res => {
-          console.log(res.data);
-          setLogin(res.data)
-        })
-        .catch((err) =>
-          console.log(err));
-        };
-    
+
+ // Loads all pantries and sets them to books
+ function loadLogin() {
+  API.getLogin(formObject.email, formObject.password)
+    .then(
+      res => {
+        setLogin(res.data)
+        if (res.data) {
+          console.log(res.data)
+          history.push("/home")
+          Notify("Login Successful!")
+        }
+      }
+        )
+    .catch((err) => {
+      if (err) {
+        console.log(err)
+        Notify("Try Again or Sign Up.")
+      }
+    })
+ }
+
     function handleInputChange(event) {
       const { name, value } = event.target;
       setFormObject({ ...formObject, [name]: value })
@@ -55,8 +65,7 @@ const Login = () => {
     //Function for Toast and handleFormSubmit
     function submitFunction (e) {
       handleFormSubmit(e);
-      Notify(e);
-     }
+    }
     return (
       <div>
       <ToastContainer />
@@ -82,7 +91,7 @@ const Login = () => {
               disabled={!(formObject.email && formObject.password)}
               onClick={submitFunction}
             >
-              <i className="fas fa-search"></i>
+              <i class="fas fa-arrow-right"></i>
               </FormBtn>
               </div>
           <div>

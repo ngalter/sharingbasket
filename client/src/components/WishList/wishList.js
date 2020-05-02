@@ -35,8 +35,8 @@ const [pantries, setPantries] = useState([]);
         </div>
           {pantries.length ? (
             <div>
-                <table class="table-responsive">
-               <table class="table table-hover" >
+                <table className="table-responsive">
+               <table className="table table-hover" >
                 <tr>
                   <th align="left">Pantry Name</th>
                   <th align="left">Wish Item</th>
@@ -53,7 +53,7 @@ const [pantries, setPantries] = useState([]);
                </table>
             </div>
           ) : (
-              <h3>No Results to Display</h3>
+            <div className="noResults" style={{ textAlign: "center" }}>No Results to Display</div>
             )}
     </div>
     );

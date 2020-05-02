@@ -71,7 +71,7 @@ const Signup = () => {
               disabled={!(formObject.email && formObject.password)}
               onClick={handleFormSubmit}
             >
-              <i className="fas fa-search"></i>
+              <i class="fas fa-arrow-right"></i>
               </FormBtn>
               </div>
           <div>

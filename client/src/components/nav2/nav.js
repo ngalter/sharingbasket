@@ -26,7 +26,7 @@ function Nav() {
     <header className={header}>
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top py-3" id="mainNav">
     <div className="container">
-        <a className="navbar-brand js-scroll-trigger" href="#page-top"><Link to="/" style={{ color: 'white' }}>The Sharing Basket</Link></a>
+        <a className="navbar-brand js-scroll-trigger" href="#page-top"><Link to="/" style={{ color: 'white' }}>Sharing Basket</Link></a>
         <div className="collapse navbar-collapse" id="navbarResponsive">
         </div>
     </div>
