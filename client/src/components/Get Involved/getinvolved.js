@@ -9,7 +9,7 @@ function Contact() {
                 <div className="row justify-content-center">
                     <div className="col-lg-6 text-center">
                         <h2 className="mt-0">Get Involved</h2>
-                    <p className="text-muted mb-5">The Sharing Basket is grateful for the support we have received from passionate volunteers as we continue to mobilize resources to help those in need across the country. </p>
+                    <p className="text-muted mb-5">Sharing Basket is grateful for the support we have received from passionate volunteers as we continue to mobilize resources to help those in need across the country. </p>
                     </div>
                 </div>
                 <div className="row">           

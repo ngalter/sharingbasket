@@ -2430,13 +2430,6 @@ textarea.form-control {
 .btn:focus, .btn.focus {
   outline: 0;
 }
-.btn.disabled, .btn:disabled {
-  opacity: 0.65;
-}
-a.btn.disabled,
-fieldset:disabled a.btn {
-  pointer-events: none;
-}
 
 .btn-primary {
   color: #fff;
@@ -2499,8 +2492,10 @@ fieldset:disabled a.btn {
 
 .btn-success {
   color: #fff;
-  background-color: #28a745;
+  background-color: #28a745 !important;
   border-color: #28a745;
+  margin-left: 20px !important;
+  opacity: 100 !important;
 }
 .btn-success:hover {
   color: #fff;

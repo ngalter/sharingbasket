@@ -31,8 +31,8 @@
     outline: none;
     color:white;
     border-width: 2px;
-    max-width: 50%;
     height: auto;
+    width:250px;
   }
   
   .tagLine {
