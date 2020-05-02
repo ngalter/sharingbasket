@@ -64,6 +64,7 @@ const Signup = () => {
             <Input
               onChange={handleInputChange}
               name="password"
+              type="password"
               placeholder="Password"
               style={{ textAlign: "center" }}
             />
