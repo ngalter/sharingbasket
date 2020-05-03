@@ -490,7 +490,8 @@
 
   /* collapsable nav */
   #mainNav {
-    background-color: transparent;
+    background-color: rgba(32,32,32,.5);
+    padding-top: 20px;
     transition: background-color 0.2s ease;
   }
   #mainNav .navbar-brand {
@@ -504,6 +505,7 @@
     font-weight: 700;
     font-size: 0.9rem;
     padding: 0.75rem 0;
+    margin-top: 10px;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
     color: #1618b8;
